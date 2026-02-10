@@ -20,7 +20,7 @@ while True:
           print('Cargando...')
           os.system('cls' if os.name == 'nt' else 'clear')
           print(" ")
-          print(Fore.GREEN + "---PASSWORD GENERATOR---")
+          print(Fore.GREEN + "--- PASSKEY ---")
           print(" ")
           print(Fore.GREEN + f"Tu nueva contraseña es: {generar_password(size)}")
      except KeyboardInterrupt:
