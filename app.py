@@ -1,4 +1,4 @@
-import random
+import secrets
 import string
 import os
 from colorama import Fore, Style, init
@@ -7,7 +7,7 @@ init(autoreset=True)
 
 def generar_password(longitud):
      caracteres = string.ascii_letters + string.digits + string.punctuation
-     password = "".join(random.choice(caracteres) for i in range(longitud))
+     password = "".join(secrets.choice(caracteres) for i in range(longitud))
      return password
 
 while True:
@@ -23,6 +23,7 @@ while True:
           print(Fore.GREEN + "--- PASSKEY ---")
           print(" ")
           print(Fore.GREEN + f"Tu nueva contraseña es: {generar_password(size)}")
-     except KeyboardInterrupt:
+     except (KeyboardInterrupt, EOFError):
+          print("")
           print(Fore.RED + "\nSaliendo...")
           break
